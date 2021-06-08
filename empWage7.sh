@@ -8,15 +8,15 @@ EMP_RATE_PER_HR=20
 #Variable
 empCheck=$((RANDOM%3))
 
-isPresent=1
-
-if [ $empCheck -eq $IS_FULL_TIME ]
-then
-	empHrs=4
-elif [ $empCheck -eq $IS_PART_TIME ]
-then
+case $empCheck in
+		$IS_FULL_TIME)
 empHrs=8
-else
-empHrs=o
-fi
-	wage=$(($EMP_RATE_PER_HR*$empHrs))
+;;
+$IS_PART_TIME)
+empHrs=4
+;;
+*)
+empHrs=0
+;;
+esac
+wage=$(($EMP_RATE_PER_HR*$empHrs))
