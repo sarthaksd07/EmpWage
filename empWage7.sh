@@ -12,10 +12,10 @@ isPresent=1
 
 if [ $empCheck -eq $IS_FULL_TIME ]
 then
-	empHrs=8
+	empHrs=4
 elif [ $empCheck -eq $IS_PART_TIME ]
 then
-empHrs=4
+empHrs=8
 else
 empHrs=o
 fi
